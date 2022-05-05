@@ -1,0 +1,40 @@
+
+========
+Contents
+========
+
+API folder
+==========
+
+API contains a complete prebuilt set of API components:
+
+    + @SpikeGL             // place in client MATLAB project directory
+    + CalinsNetMex.mexw64  // place in client MATLAB project directory
+
+Build folder
+============
+
+Note: Building is optional: the API components are prebuilt.
+
+Build contains the sources and make(*.bat) file to generate CalinsNetMex.mexw64:
+
+    + CalinsNetMex.mexw64  // generated in API directory
+
+Other demo files
+================
+
+These are source files for building a demo client app.
+
+- DemoRemoteAPI.m
+- LatencyTest.h
+
+Help docs
+=========
+
+- Contents.txt
+- GettingStarted.txt
+- Help.txt
+- LICENSE.txt
+- WhatsNew.txt
+
+
