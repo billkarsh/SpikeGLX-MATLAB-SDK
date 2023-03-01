@@ -1,6 +1,6 @@
 % [nS,nC,nR,mat] = GetStreamShankMap( myObj, js, ip )
 %
-%     Get shank map:
+%     Get shank map for NI stream (js = 0):
 %     {nS,nC,nR} = max {shanks, cols, rows} on this probe;
 %     mat = Mx4 matrix of shank map entries, where,
 %     M   = channel count.
