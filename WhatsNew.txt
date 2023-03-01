@@ -5,6 +5,8 @@ AS OF 20230202
 - GetStreamShankMap can only be used on NI stream (js = 0) because imec
 ShankMaps are for internal use only. They will be replaced by geomMap.
 
+- "Onebox" -> "OneBox"
+
 ==============
 AS OF 20220101
 ==============
@@ -22,7 +24,7 @@ AS OF 20220101
 - Formerly streams were referenced by the single parameter streamID: {-1=nidq, 0+=imec-probe}.
 Henceforth two parameters (js, ip) are used to select an expanded variety of streams:
 - js: stream type: {0=nidq, 1=obx, 2=imec-probe}.
-- ip: substream:   {0=nidq (if js=0), 0+=which Onebox or imec probe}.
+- ip: substream:   {0=nidq (if js=0), 0+=which OneBox or imec probe}.
 Examples (js, ip):
 (0, 0) = nidq.	// for nidq, ip is arbitrary but zero by convention
 (1, 4) = obx4.
@@ -51,8 +53,8 @@ GetParamsImecCommon
 SetParamsImecCommon
 GetParamsImecProbe
 SetParamsImecProbe
-GetParamsOnebox
-SetParamsOnebox
+GetParamsOneBox
+SetParamsOneBox
 GetStreamI16ToVolts
 GetStreamMaxInt
 GetStreamShankMap

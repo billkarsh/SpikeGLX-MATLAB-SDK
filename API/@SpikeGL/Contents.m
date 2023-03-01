@@ -47,7 +47,7 @@
 %
 % The two integer values (js, ip) select a data stream.
 % js: stream type: {0=nidq, 1=obx, 2=imec-probe}.
-% ip: substream:   {0=nidq (if js=0), 0+=which Onebox or imec probe}.
+% ip: substream:   {0=nidq (if js=0), 0+=which OneBox or imec probe}.
 % Examples (js, ip):
 % (0, 0) = nidq.	// for nidq, ip is arbitrary but zero by convention
 % (1, 4) = obx4.
@@ -131,9 +131,9 @@
 %     Get imec parameters for given logical probe.
 %     Returned as a struct of name/value pairs.
 %
-% params = GetParamsOnebox( myobj, ip )
+% params = GetParamsOneBox( myobj, ip )
 %
-%     Get parameters for given logical Onebox.
+%     Get parameters for given logical OneBox.
 %     Returned as a struct of name/value pairs.
 %
 % name = GetRunName( myobj )
@@ -194,7 +194,7 @@
 %
 % [SN,type] = GetStreamSN( myobj, js, ip )
 %
-%     js = 1: Return Onebox SN and slot.
+%     js = 1: Return OneBox SN and slot.
 %     js = 2: Return probe  SN and type.
 %     SN = serial number string.
 %
@@ -357,14 +357,14 @@
 %
 %     Note: You can set any subset of fields under [SerialNumberToProbe]/SNjjj.
 %
-% myobj = SetParamsOnebox( myobj, params_struct, ip )
+% myobj = SetParamsOneBox( myobj, params_struct, ip )
 %
-%     The inverse of GetParamsOnebox.m, this sets parameters
-%     for a given logical Onebox. Parameters are a struct of
+%     The inverse of GetParamsOneBox.m, this sets parameters
+%     for a given logical OneBox. Parameters are a struct of
 %     name/value pairs. The call will error if a run is currently
 %     in progress.
 %
-%     Note: You can set any subset of fields under [SerialNumberToOnebox]/SNjjj.
+%     Note: You can set any subset of fields under [SerialNumberToOneBox]/SNjjj.
 %
 % myobj = SetRecordingEnable( myobj, bool_flag )
 %

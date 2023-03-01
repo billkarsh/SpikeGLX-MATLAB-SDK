@@ -1,6 +1,6 @@
 % [SN,type] = GetStreamSN( myobj, js, ip )
 %
-%     js = 1: Return Onebox SN and slot.
+%     js = 1: Return OneBox SN and slot.
 %     js = 2: Return probe  SN and type.
 %     SN = serial number string.
 %

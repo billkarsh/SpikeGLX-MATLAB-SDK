@@ -1,16 +1,16 @@
-% myobj = SetParamsOnebox( myobj, params_struct, ip )
+% myobj = SetParamsOneBox( myobj, params_struct, ip )
 %
-%     The inverse of GetParamsOnebox.m, this sets parameters
-%     for a given logical Onebox. Parameters are a struct of
+%     The inverse of GetParamsOneBox.m, this sets parameters
+%     for a given logical OneBox. Parameters are a struct of
 %     name/value pairs. The call will error if a run is currently
 %     in progress.
 %
-%     Note: You can set any subset of fields under [SerialNumberToOnebox]/SNjjj.
+%     Note: You can set any subset of fields under [SerialNumberToOneBox]/SNjjj.
 %
-function [s] = SetParamsOnebox( s, params, ip )
+function [s] = SetParamsOneBox( s, params, ip )
 
     if( ~isstruct( params ) )
-        error( 'SetParamsOnebox: Argument must be a struct.' );
+        error( 'SetParamsOneBox: Argument must be a struct.' );
     end
 
     ChkConn( s );
@@ -29,7 +29,7 @@ function [s] = SetParamsOnebox( s, params, ip )
         elseif( ischar( f ) )
             line = sprintf( '%s=%s\n', names{i}, f );
         else
-            error( 'SetParamsOnebox: Field %s must be numeric scalar or a string.', names{i} );
+            error( 'SetParamsOneBox: Field %s must be numeric scalar or a string.', names{i} );
         end
 
         ok = CalinsNetMex( 'sendstring', s.handle, line );

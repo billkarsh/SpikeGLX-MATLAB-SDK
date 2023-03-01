@@ -1,9 +1,9 @@
-% params = GetParamsOnebox( myobj, ip )
+% params = GetParamsOneBox( myobj, ip )
 %
-%     Get parameters for given logical Onebox.
+%     Get parameters for given logical OneBox.
 %     Returned as a struct of name/value pairs.
 %
-function ret = GetParamsOnebox( s, ip )
+function ret = GetParamsOneBox( s, ip )
 
     ret = struct();
     res = DoGetCells( s, sprintf( 'GETPARAMSOBX %d', ip ) );
