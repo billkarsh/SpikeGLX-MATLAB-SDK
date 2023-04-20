@@ -3,10 +3,11 @@
 %     Get MxN matrix of the most recent stream data.
 %     M = samp_count, MIN(max_samps,available).
 %     N = channel count...
-%         Specify vector [a,b,c,...] of channels, or,
+%     Data are int16 type.
+%     channel_subset is an optional vector of specific channels to fetch [a,b,c...], or,
 %         [-1] = all acquired channels, or,
 %         [-2] = all saved channels.
-%     downsample_ratio is an integer (default = 1).
+%     downsample_ratio is an integer; return every Nth sample (default = 1).
 %     Also returns headCt = index of first sample in matrix.
 %
 function [mat,headCt] = FetchLatest( s, js, ip, max_samps, varargin )
