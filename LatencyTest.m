@@ -37,17 +37,20 @@ while 1
     [M,headCt] = Fetch( hSGL, js, ip, fromCt, 120, channels );
 
     [tpts,~] = size(M);
-    v_diff = M(tpts,id) - M(1,id);
 
-    if v_diff > thresh && level == 0
-        level = 1;
-        SetDigOut( hSGL, level, line );
-    elseif v_diff < -thresh && level == 1
-        level = 0;
-        SetDigOut( hSGL, level, line );
+    if tpts > 1
+        v_diff = M(tpts,id) - M(1,id);
+
+        if v_diff > thresh && level == 0
+            level = 1;
+            SetDigOut( hSGL, level, line );
+        elseif v_diff < -thresh && level == 1
+            level = 0;
+            SetDigOut( hSGL, level, line );
+        end
+
+        fromCt = headCt + tpts;
     end
-
-    fromCt = headCt + tpts;
 
 end
 
