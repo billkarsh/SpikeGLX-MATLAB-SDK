@@ -4,6 +4,7 @@ AS OF 20230425
 
 New functions
 -------------
+GetProbeList
 SetAnatomy_Pinpoint
 
 ==============
