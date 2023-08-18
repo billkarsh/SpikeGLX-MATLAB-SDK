@@ -10,6 +10,7 @@ The SDK lets MATLAB applications communicate with SpikeGLX phase30 versions
 * Start/Stop runs.
 * Start/stop writing.
 * Fetch data in real time.
+* Everything you need to integrate SpikeGLX into your workflow.
 
 ### Who
 

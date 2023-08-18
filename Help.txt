@@ -2,9 +2,9 @@
 SYNOPSIS
 ========
 
-The @SpikeGL API class is a MATLAB object with methods to access the SpikeGLX program via TCP/IP. SpikeGLX and MATLAB can run on the same machine (via loopback socket address 127.0.0.1 and port 4142) or across a network.
+The @SpikeGL API class is a MATLAB object with methods to access the SpikeGLX program via TCP/IP. On top of that, our message exchange protocol implements acknowledgement, validation and error reporting. SpikeGLX and MATLAB can run on the same machine (via loopback socket address 127.0.0.1) or across a network.
 
-The API provides extensive control over a running SpikeGLX process: starting and stopping a run, setting parameters, calling the Par2 and SHA1 tools, and so on.
+The API provides extensive control over a running SpikeGLX process: starting and stopping a run, setting parameters, fetching live data, calling the Par2 and SHA1 tools, and so on. Everything you need to integate SpikeGLX into your workflow.
 
 Users (clients) of this class merely need to construct an instance of a @SpikeGL object and all network communication with the SpikeGLX server process is handled automatically.
 

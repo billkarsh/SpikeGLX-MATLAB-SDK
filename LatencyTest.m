@@ -12,8 +12,8 @@
 % NI device to make another edge that is sent to the probe's
 % SMA connector as a digital input. Now the separation between
 % the LFP threshold event and the resulting NI event gives a
-% direct readout of closed-loop latency. We measure the median
-% closed-loop latency to be 9.4 ms using the MATLAB API.
+% direct readout of closed-loop latency. We measure the typical
+% closed-loop latency to be 6.5 ms using the MATLAB API.
 %
 function LatencyTest
 
