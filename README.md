@@ -12,6 +12,11 @@ The SDK lets MATLAB applications communicate with SpikeGLX phase30 versions
 * Fetch data in real time.
 * Everything you need to integrate SpikeGLX into your workflow.
 
+There's an included closed-loop latency test program; used to obtain these
+results:
+
+![MATLAB API Latency](MATLAB_latency.png).
+
 ### Who
 
 The SDK is developed by [Bill Karsh](https://www.janelia.org/people/bill-karsh)
