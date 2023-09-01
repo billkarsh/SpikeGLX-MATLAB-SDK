@@ -15,7 +15,9 @@ The SDK lets MATLAB applications communicate with SpikeGLX phase30 versions
 There's an included closed-loop latency test program; used to obtain these
 results:
 
-![MATLAB API Latency](MATLAB_latency.png).
+![MATLAB API Latency](MATLAB_latency.png)
+
+>*Note: Low latency mode is available with SpikeGLX 20230815 and later.*
 
 ### Who
 
