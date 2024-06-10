@@ -89,6 +89,7 @@
 %     M = samp_count, MIN(max_samps,available).
 %     N = channel count...
 %     Data are int16 type.
+%     If filtered IM stream buffers are enabled, you may fetch from them with js=-2.
 %     Fetching starts at index start_samp.
 %     channel_subset is an optional vector of specific channels to fetch [a,b,c...], or,
 %         [-1] = all acquired channels, or,
@@ -102,6 +103,7 @@
 %     M = samp_count, MIN(max_samps,available).
 %     N = channel count...
 %     Data are int16 type.
+%     If filtered IM stream buffers are enabled, you may fetch from them with js=-2.
 %     channel_subset is an optional vector of specific channels to fetch [a,b,c...], or,
 %         [-1] = all acquired channels, or,
 %         [-2] = all saved channels.
