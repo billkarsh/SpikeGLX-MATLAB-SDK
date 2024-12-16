@@ -78,7 +78,7 @@ for i=1:numCalls
 %     VerifySha1(hSGL, 'C:/SGL_DATA/myRun_g0_t0.nidq.bin')
 %     StopRun(hSGL);
 %     StartRun(hSGL);
-%     SetDigOut(hSGL, 0, 'Dev6/port0/line0')
+%     Set_NI_DO(hSGL, 'Dev6/port0/line0', 0)
 %     SetRunName(hSGL, 'myRun_g5_t5');
 %     SetRecordingEnable(hSGL, 1);
 %     IsSaving(hSGL)

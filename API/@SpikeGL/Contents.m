@@ -321,10 +321,16 @@
 %     Set ith global data directory.
 %     Set required parameter idir to zero for main data directory.
 %
-% myobj = SetDigOut( myobj, bool_flag, channels )
+% myobj = Set_NI_DO( myobj, lines, bits )
 %
-%     Set digital output on/off. Channel strings have form:
-%     'Dev6/port0/line2,Dev6/port0/line5'.
+%     Set one or more NI lines high/low.
+%     - lines is a string list of lines to set, e.g.:
+%         'Dev6/port0/line2,Dev6/port0/line5'
+%         'Dev6/port1/line0:3'
+%         'Dev6/port1:2'
+%     - bits is a uint32 value, each bit maps to a line:
+%         The lowest 8 bits map to port 0.
+%         The next higher 8 bits map to port 1, etc.
 %
 % myobj = SetMetadata( myobj, metadata_struct )
 %

@@ -30,7 +30,7 @@ channels = [384:768];           % zero-based for SpikeGLX
 
 fromCt = GetStreamSampleCount( hSGL, js, ip );
 
-SetDigOut( hSGL, level, line );
+Set_NI_DO( hSGL, line, level );
 
 while 1
 
@@ -42,11 +42,11 @@ while 1
         v_diff = M(tpts,id) - M(1,id);
 
         if v_diff > thresh && level == 0
-            level = 1;
-            SetDigOut( hSGL, level, line );
-        elseif v_diff < -thresh && level == 1
+            level = 0xFFFFFFFF;
+            Set_NI_DO( hSGL, line, level );
+        elseif v_diff < -thresh && level == 0xFFFFFFFF
             level = 0;
-            SetDigOut( hSGL, level, line );
+            Set_NI_DO( hSGL, line, level );
         end
 
         fromCt = headCt + tpts;
