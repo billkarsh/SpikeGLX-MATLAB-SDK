@@ -1,13 +1,19 @@
-% myobj = SetParamsOneBox( myobj, params_struct, ip )
+% myobj = SetParamsOneBox( myobj, params_struct, ip, slot )
 %
-%     The inverse of GetParamsOneBox.m, this sets parameters
-%     for a given logical OneBox. Parameters are a struct of
-%     name/value pairs. The call will error if a run is currently
-%     in progress.
+%     The inverse of GetParamsOneBox.m, this sets params
+%     for a selected OneBox. Parameters are a struct of
+%     name/value pairs.
+%
+%     To reference a OneBox configured as a recording stream
+%     set ip to its stream-id; if ip >= 0, slot is ignored.
+%     Any selected OneBox can also be referenced by setting
+%     ip = -1, and giving its slot index.
+%
+%     The call will error if a run is currently in progress.
 %
 %     Note: You can set any subset of fields under [SerialNumberToOneBox]/SNjjj.
 %
-function [s] = SetParamsOneBox( s, params, ip )
+function [s] = SetParamsOneBox( s, params, ip, slot )
 
     if( ~isstruct( params ) )
         error( 'SetParamsOneBox: Argument must be a struct.' );
@@ -15,7 +21,7 @@ function [s] = SetParamsOneBox( s, params, ip )
 
     ChkConn( s );
 
-    ok = CalinsNetMex( 'sendstring', s.handle, sprintf( 'SETPARAMSOBX %d\n',ip ) );
+    ok = CalinsNetMex( 'sendstring', s.handle, sprintf( 'SETPARAMSOBX %d %d\n', ip, slot ) );
     ReceiveREADY( s, 'SETPARAMSOBX' );
 
     names = fieldnames( params );

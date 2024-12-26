@@ -149,10 +149,15 @@
 %     Get imec parameters for given logical probe.
 %     Returned as a struct of name/value pairs.
 %
-% params = GetParamsOneBox( myobj, ip )
+% params = GetParamsOneBox( myobj, ip, slot )
 %
-%     Get parameters for given logical OneBox.
-%     Returned as a struct of name/value pairs.
+%     Get parameters for selected OneBox;
+%     returned as a struct of name/value pairs.
+%
+%     To reference a OneBox configured as a recording stream
+%     set ip to its stream-id; if ip >= 0, slot is ignored.
+%     Any selected OneBox can also be referenced by setting
+%     ip = -1, and giving its slot index.
 %
 % list = GetProbeList( myobj )
 %
@@ -402,12 +407,18 @@
 %
 %     Note: You can set any subset of fields under [SerialNumberToProbe]/SNjjj.
 %
-% myobj = SetParamsOneBox( myobj, params_struct, ip )
+% myobj = SetParamsOneBox( myobj, params_struct, ip, slot )
 %
-%     The inverse of GetParamsOneBox.m, this sets parameters
-%     for a given logical OneBox. Parameters are a struct of
-%     name/value pairs. The call will error if a run is currently
-%     in progress.
+%     The inverse of GetParamsOneBox.m, this sets params
+%     for a selected OneBox. Parameters are a struct of
+%     name/value pairs.
+%
+%     To reference a OneBox configured as a recording stream
+%     set ip to its stream-id; if ip >= 0, slot is ignored.
+%     Any selected OneBox can also be referenced by setting
+%     ip = -1, and giving its slot index.
+%
+%     The call will error if a run is currently in progress.
 %
 %     Note: You can set any subset of fields under [SerialNumberToOneBox]/SNjjj.
 %

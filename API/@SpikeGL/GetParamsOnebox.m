@@ -1,12 +1,17 @@
-% params = GetParamsOneBox( myobj, ip )
+% params = GetParamsOneBox( myobj, ip, slot )
 %
-%     Get parameters for given logical OneBox.
-%     Returned as a struct of name/value pairs.
+%     Get parameters for selected OneBox;
+%     returned as a struct of name/value pairs.
 %
-function ret = GetParamsOneBox( s, ip )
+%     To reference a OneBox configured as a recording stream
+%     set ip to its stream-id; if ip >= 0, slot is ignored.
+%     Any selected OneBox can also be referenced by setting
+%     ip = -1, and giving its slot index.
+%
+function ret = GetParamsOneBox( s, ip, slot )
 
     ret = struct();
-    res = DoGetCells( s, sprintf( 'GETPARAMSOBX %d', ip ) );
+    res = DoGetCells( s, sprintf( 'GETPARAMSOBX %d %d', ip, slot ) );
 
       % res is a cell array, each cell containing a string of form
       % '<parameter name> = <parameter value>'

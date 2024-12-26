@@ -3,6 +3,8 @@ AS OF 20241215
 ==============
 
 - SetDigOut replaced by Set_NI_DO.
+- GetParamsOneBox takes (... ip, slot)
+- SetParamsOneBox takes (... ip, slot)
 
 ==============
 AS OF 20240129
