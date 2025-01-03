@@ -1,6 +1,6 @@
 % myobj = StartRun( myobj )
-% myobj = StartRun( myobj, params )
-% myobj = StartRun( myobj, runName )
+% myobj = StartRun( myobj, params_struct )
+% myobj = StartRun( myobj, 'runName' )
 %
 %     Start data acquisition run. Optional second argument (params)
 %     is a struct of name/value pairs as returned from GetParams.m.

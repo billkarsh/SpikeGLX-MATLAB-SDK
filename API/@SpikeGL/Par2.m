@@ -1,4 +1,4 @@
-% res = Par2( myobj, op, filename )
+% res = Par2( myobj, op, 'filename' )
 %
 %     Create, Verify, or Repair Par2 redundancy files for
 %     'filename'. Arguments:

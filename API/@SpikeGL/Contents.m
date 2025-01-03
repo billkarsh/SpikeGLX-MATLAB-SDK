@@ -287,7 +287,7 @@
 %     ip:    imec probe index.
 %     color: {0=blue, 1=red}.
 %
-% res = Par2( myobj, op, filename )
+% res = Par2( myobj, op, 'filename' )
 %
 %     Create, Verify, or Repair Par2 redundancy files for
 %     'filename'. Arguments:
@@ -302,7 +302,7 @@
 % myobj = SetAnatomy_Pinpoint( myobj, 'shankdat' )
 %
 %     Set anatomy data string with Pinpoint format:
-%     [probe-id,shank-id](startpos,endpos,R,G,B,rgnname)(startpos,endpos,R,G,B,rgnname)…()
+%     [probe-id,shank-id](startpos,endpos,R,G,B,rgnname)(startpos,endpos,R,G,B,rgnname)...()
 %        - probe-id: SpikeGLX logical probe id.
 %        - shank-id: [0..n-shanks].
 %        - startpos: region start in microns from tip.
@@ -321,21 +321,10 @@
 %     are a struct of name/value pairs. This call stops current output.
 %     Call SetAudioEnable( myobj, 1 ) to restart it.
 %
-% myobj = SetDataDir( myobj, idir, dir )
+% myobj = SetDataDir( myobj, idir, 'dir' )
 %
 %     Set ith global data directory.
 %     Set required parameter idir to zero for main data directory.
-%
-% myobj = Set_NI_DO( myobj, lines, bits )
-%
-%     Set one or more NI lines high/low.
-%     - lines is a string list of lines to set, e.g.:
-%         'Dev6/port0/line2,Dev6/port0/line5'
-%         'Dev6/port1/line0:3'
-%         'Dev6/port1:2'
-%     - bits is a uint32 value, each bit maps to a line:
-%         The lowest 8 bits map to port 0.
-%         The next higher 8 bits map to port 1, etc.
 %
 % myobj = SetMetadata( myobj, metadata_struct )
 %
@@ -378,6 +367,33 @@
 %        + setRecordingEnable( 1 )
 %        + setRecordingEnable( 0 )
 %        + etc.
+%
+% myobj = Set_NI_DO( myobj, 'lines', bits )
+%
+%     Set one or more NI lines high/low.
+%     - lines is a string list of lines to set, e.g.:
+%         'Dev6/port0/line2,Dev6/port0/line5'
+%         'Dev6/port1/line0:3'
+%         'Dev6/port1:2'
+%     - bits is a uint32 value, each bit maps to a line:
+%         The lowest 8 bits map to port 0.
+%         The next higher 8 bits map to port 1, etc.
+%
+% myobj = Set_OBX_AO( myobj, ip, slot, 'chn_vlt' )
+%
+%     Set one or more OneBox AO (DAC) channel voltages.
+%     - chn_vlt is a string with format: (chan,volts)(chan,volts)...()
+%     - The chan values are integer AO indices in range [0,11].
+%     - You can only use AO channels already listed on the OBX setup tab.
+%     - Voltages are double values in range [-5,5] V.
+%     - DAC is 16-bit; theoretical resolution is (10 V)/(2^16) ~ .0001526 V.
+%     - Practical resolution appears to be ~ 0.002 V.
+%     - AO channels are disabled at run start/end; voltage ~ 1.56 V.
+%
+%     To reference a OneBox configured as a recording stream
+%     set ip to its stream-id; if ip >= 0, slot is ignored.
+%     Any selected OneBox can also be referenced by setting
+%     ip = -1, and giving its slot index.
 %
 % myobj = SetParams( myobj, params_struct )
 %
@@ -446,8 +462,8 @@
 %     beep signaling file creation. hertz=0 disables the beep.
 %
 % myobj = StartRun( myobj )
-% myobj = StartRun( myobj, params )
-% myobj = StartRun( myobj, runName )
+% myobj = StartRun( myobj, params_struct )
+% myobj = StartRun( myobj, 'runName' )
 %
 %     Start data acquisition run. Optional second argument (params)
 %     is a struct of name/value pairs as returned from GetParams.m.
@@ -475,7 +491,7 @@
 %     switch. TriggerGT is blocked until you click the button or call
 %     SetRecordingEnable.
 %
-% res = VerifySha1( myobj, filename )
+% res = VerifySha1( myobj, 'filename' )
 %
 %     Verifies the SHA1 sum of the file specified by filename.
 %     If filename is relative, it is appended to the run dir.

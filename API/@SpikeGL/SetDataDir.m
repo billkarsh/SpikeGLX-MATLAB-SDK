@@ -1,4 +1,4 @@
-% myobj = SetDataDir( myobj, idir, dir )
+% myobj = SetDataDir( myobj, idir, 'dir' )
 %
 %     Set ith global data directory.
 %     Set required parameter idir to zero for main data directory.

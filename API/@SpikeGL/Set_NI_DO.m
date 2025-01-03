@@ -1,4 +1,4 @@
-% myobj = Set_NI_DO( myobj, lines, bits )
+% myobj = Set_NI_DO( myobj, 'lines', bits )
 %
 %     Set one or more NI lines high/low.
 %     - lines is a string list of lines to set, e.g.:
@@ -10,10 +10,6 @@
 %         The next higher 8 bits map to port 1, etc.
 %
 function [s] = Set_NI_DO( s, lines, bits )
-
-    if( ~isnumeric( bits ) )
-        error( 'Set_NI_DO: Arg 3 must be a uint32.' );
-    end
 
     DoSimpleCmd( s, sprintf( 'SETNIDO %s %d', lines, bits ) );
 end

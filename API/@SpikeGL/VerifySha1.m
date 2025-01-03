@@ -1,4 +1,4 @@
-% res = VerifySha1( myobj, filename )
+% res = VerifySha1( myobj, 'filename' )
 %
 %     Verifies the SHA1 sum of the file specified by filename.
 %     If filename is relative, it is appended to the run dir.

@@ -1,7 +1,7 @@
 % myobj = SetAnatomy_Pinpoint( myobj, 'shankdat' )
 %
 %     Set anatomy data string with Pinpoint format:
-%     [probe-id,shank-id](startpos,endpos,R,G,B,rgnname)(startpos,endpos,R,G,B,rgnname)…()
+%     [probe-id,shank-id](startpos,endpos,R,G,B,rgnname)(startpos,endpos,R,G,B,rgnname)...()
 %        - probe-id: SpikeGLX logical probe id.
 %        - shank-id: [0..n-shanks].
 %        - startpos: region start in microns from tip.
