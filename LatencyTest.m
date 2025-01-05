@@ -25,12 +25,12 @@ js = 2;
 ip = 0;
 id = 1 + (393 - 384);           % add 1 for MATLAB
 thresh  = 0.45*mv2i16;
-level = 0;
+bits = 0;
 channels = [384:768];           % zero-based for SpikeGLX
 
 fromCt = GetStreamSampleCount( hSGL, js, ip );
 
-Set_NI_DO( hSGL, line, level );
+Set_NI_DO( hSGL, line, bits );
 
 while 1
 
@@ -41,12 +41,12 @@ while 1
     if tpts > 1
         v_diff = M(tpts,id) - M(1,id);
 
-        if v_diff > thresh && level == 0
-            level = 0xFFFFFFFF;
-            Set_NI_DO( hSGL, line, level );
-        elseif v_diff < -thresh && level == 0xFFFFFFFF
-            level = 0;
-            Set_NI_DO( hSGL, line, level );
+        if v_diff > thresh && bits == 0
+            bits = hex2dec('FF');
+            Set_NI_DO( hSGL, line, bits );
+        elseif v_diff < -thresh && bits == hex2dec('FF')
+            bits = 0;
+            Set_NI_DO( hSGL, line, bits );
         end
 
         fromCt = headCt + tpts;
