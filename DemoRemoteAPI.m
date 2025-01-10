@@ -78,8 +78,8 @@ for i=1:numCalls
 %     VerifySha1(hSGL, 'C:/SGL_DATA/myRun_g0_t0.nidq.bin')
 %     StopRun(hSGL);
 %     StartRun(hSGL);
-%     Set_NI_DO(hSGL, 'PXI1Slot4/port0/line4', hex2dec('FF'))
-%     Set_OBX_AO(hSGL, -1, 21, '(5,-1.25)')
+%     NI_DO_Set(hSGL, 'PXI1Slot4/port0/line4', hex2dec('FF'))
+%     OBX_AO_Set(hSGL, -1, 21, '(5,-1.25)')
 %     SetRunName(hSGL, 'myRun_g5_t5');
 %     SetRecordingEnable(hSGL, 1);
 %     IsSaving(hSGL)

@@ -1,4 +1,4 @@
-% myobj = Set_OBX_AO( myobj, ip, slot, 'chn_vlt' )
+% myobj = OBX_AO_Set( myobj, ip, slot, 'chn_vlt' )
 %
 %     Set one or more OneBox AO (DAC) channel voltages.
 %     - chn_vlt is a string with format: (chan,volts)(chan,volts)...()
@@ -14,7 +14,7 @@
 %     Any selected OneBox can also be referenced by setting
 %     ip = -1, and giving its slot index.
 %
-function [s] = Set_OBX_AO( s, ip, slot, chn_vlt )
+function [s] = OBX_AO_Set( s, ip, slot, chn_vlt )
 
-    DoSimpleCmd( s, sprintf( 'SETOBXAO %d %d %s', ip, slot, chn_vlt ) );
+    DoSimpleCmd( s, sprintf( 'OBXAOSET %d %d %s', ip, slot, chn_vlt ) );
 end

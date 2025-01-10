@@ -4,8 +4,8 @@ AS OF 20241215
 
 - GetParamsOneBox takes (... ip, slot).
 - SetParamsOneBox takes (... ip, slot).
-- SetDigOut replaced by Set_NI_DO.
-- Add Set_OBX_AO.
+- SetDigOut replaced by NI_DO_Set.
+- Add OBX_AO_Set.
 
 ==============
 AS OF 20240129
