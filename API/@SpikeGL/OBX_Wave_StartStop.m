@@ -13,7 +13,8 @@
 %     - Waves only play at AO (DAC) channel-0.
 %     - To use the waveplayer, you must name channel AO-0 on
 %       the OBX setup tab of the Acquisition Configuration dialog.
-%     - After playback, the voltage remains at the last programmed level.
+%     - After playback or if looping mode is interrupted, the voltage
+%       remains at the last output level.
 %
 %     To reference a OneBox configured as a recording stream
 %     set ip to its stream-id; if ip >= 0, slot is ignored.

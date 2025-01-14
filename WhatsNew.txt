@@ -5,6 +5,9 @@ AS OF 20241215
 - GetParamsOneBox takes (... ip, slot).
 - SetParamsOneBox takes (... ip, slot).
 - SetDigOut replaced by NI_DO_Set.
+- Add NI_Wave_Arm.
+- Add NI_Wave_Load.
+- Add NI_Wave_StartStop.
 - Add OBX_AO_Set.
 - Add OBX_Wave_Arm.
 - Add OBX_Wave_Load.
