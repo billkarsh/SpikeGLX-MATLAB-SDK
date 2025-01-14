@@ -24,7 +24,8 @@ function [res] = Par2( s, op, file )
         error( 'Par2: Cannot use while running.' );
     end
 
-    ok = CalinsNetMex( 'sendstring', s.handle, sprintf( 'PAR2 %s %s\n', op, file ) );
+    ok = CalinsNetMex( 'sendstring', s.handle, ...
+            sprintf( 'PAR2 %s %s\n', op, file ) );
 
     while( 1 )
 

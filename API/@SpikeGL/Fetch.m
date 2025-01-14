@@ -47,8 +47,8 @@ function [mat,headCt] = Fetch( s, js, ip, start_samp, max_samps, varargin )
     end
 
     ok = CalinsNetMex( 'sendstring', s.handle, ...
-            sprintf( 'FETCH %d %d %ld %d %s %d\n', ...
-            js, ip, start_samp, max_samps, subset, dwnsmp ) );
+            sprintf( 'FETCH %d %d %u %d %s %d\n', ...
+            js, ip, uint64(start_samp), max_samps, subset, dwnsmp ) );
 
     line = CalinsNetMex( 'readline', s.handle );
 

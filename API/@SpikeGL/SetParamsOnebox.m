@@ -21,7 +21,9 @@ function [s] = SetParamsOneBox( s, params, ip, slot )
 
     ChkConn( s );
 
-    ok = CalinsNetMex( 'sendstring', s.handle, sprintf( 'SETPARAMSOBX %d %d\n', ip, slot ) );
+    ok = CalinsNetMex( 'sendstring', s.handle, ...
+            sprintf( 'SETPARAMSOBX %d %d\n', ip, slot ) );
+
     ReceiveREADY( s, 'SETPARAMSOBX' );
 
     names = fieldnames( params );

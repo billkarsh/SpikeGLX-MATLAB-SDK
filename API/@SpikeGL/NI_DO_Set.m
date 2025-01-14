@@ -11,5 +11,5 @@
 %
 function [s] = NI_DO_Set( s, lines, bits )
 
-    DoSimpleCmd( s, sprintf( 'NIDOSET %s %d', lines, bits ) );
+    DoSimpleCmd( s, sprintf( 'NIDOSET %s %u', lines, bits ) );
 end

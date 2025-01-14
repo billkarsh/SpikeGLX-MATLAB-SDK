@@ -4,5 +4,6 @@
 %
 function [ret] = GetStreamI16ToVolts( s, js, ip, chan )
 
-    ret = str2double( DoQuery( s, sprintf( 'GETSTREAMI16TOVOLTS %d %d %d', js, ip, chan ) ) );
+    ret = str2double( DoQuery( s, ...
+            sprintf( 'GETSTREAMI16TOVOLTS %d %d %d', js, ip, chan ) ) );
 end

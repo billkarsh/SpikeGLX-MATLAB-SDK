@@ -15,7 +15,9 @@ function [s] = SetParamsImecProbe( s, params, ip )
 
     ChkConn( s );
 
-    ok = CalinsNetMex( 'sendstring', s.handle, sprintf( 'SETPARAMSIMPRB %d\n',ip ) );
+    ok = CalinsNetMex( 'sendstring', s.handle, ...
+            sprintf( 'SETPARAMSIMPRB %d\n',ip ) );
+
     ReceiveREADY( s, 'SETPARAMSIMPRB' );
 
     names = fieldnames( params );
