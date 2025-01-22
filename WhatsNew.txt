@@ -12,6 +12,7 @@ AS OF 20241215
 - Add OBX_Wave_Arm.
 - Add OBX_Wave_Load.
 - Add OBX_Wave_StartStop.
+- Add PauseGraphs.
 
 ==============
 AS OF 20240129

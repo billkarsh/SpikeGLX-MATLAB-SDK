@@ -442,6 +442,11 @@
 %
 %     Progress is reported to the command window.
 %
+% myobj = PauseGraphs( myobj, bool_flag )
+%
+%     Pause Graphs window displays.
+%     Note: The displays are updated at ~10 Hz.
+%
 % myobj = SetAnatomy_Pinpoint( myobj, 'shankdat' )
 %
 %     Set anatomy data string with Pinpoint format:
