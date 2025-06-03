@@ -1,4 +1,10 @@
 ==============
+AS OF 20250325
+==============
+
+- Add waveplayer example scripts and waveform.
+
+==============
 AS OF 20241215
 ==============
 

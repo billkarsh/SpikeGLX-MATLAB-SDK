@@ -20,21 +20,24 @@ Build contains the sources and make(*.bat) file to generate CalinsNetMex.mexw64:
 
     + CalinsNetMex.mexw64  // generated in API directory
 
-Other demo files
-================
+Demos folder
+============
 
-These are source files for building a demo client app.
+Tools demonstrating how to use the API.
+
+- JWave folder: This is a waveform you can play with the wp_XXX scripts. Copy these files into the _Waves folder at the top level of your SpikeGLX folder.
 
 - DemoRemoteAPI.m
-- LatencyTest.h
+- LatencyTest.m
+- wp_soft_start.m
+- wp_trig_start.m
 
-Help docs
-=========
+Docs folder
+===========
 
 - Contents.txt
 - GettingStarted.txt
 - Help.txt
-- LICENSE.txt
 - WhatsNew.txt
 
 

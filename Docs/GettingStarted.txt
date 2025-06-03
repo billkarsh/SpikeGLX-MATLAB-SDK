@@ -60,4 +60,6 @@ The full set of commands is in file '@SpikeGL/Contents.m'.
 'LatencyTest.m' is a simple demonstration of real-time fetching and
 processing of streaming imec probe data.
 
+'wp_soft_start.m' and 'wp_trig_start.m' demonstrate calling the waveplayer from a script.
+
 
