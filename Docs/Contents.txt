@@ -29,6 +29,7 @@ Tools demonstrating how to use the API.
 
 - DemoRemoteAPI.m
 - LatencyTest.m
+- wp_ni_soft_start.m
 - wp_soft_start.m
 - wp_trig_start.m
 
