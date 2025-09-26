@@ -215,6 +215,14 @@ static NetClient *GetNetClient( int nrhs, const mxArray *prhs[] )
     return nc;
 }
 
+
+// Convert int(int) to char(char) operator.
+//
+static unsigned char to_lower( unsigned char c )
+{
+    return tolower( c );
+}
+
 /* ---------------------------------------------------------------- */
 /* Handlers ------------------------------------------------------- */
 /* ---------------------------------------------------------------- */
@@ -762,7 +770,7 @@ void mexFunction(
 // --------------------------------
 
     {
-        transform( scmd.begin(), scmd.end(), scmd.begin(), tolower );
+        transform( scmd.cbegin(), scmd.cend(), scmd.begin(), to_lower );
 
         map<string,T_Mexfunc>::iterator it = cmd2fun.find( scmd );
 

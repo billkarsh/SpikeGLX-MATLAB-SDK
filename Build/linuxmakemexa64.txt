@@ -1,0 +1,3 @@
+// Following command line should be run from within Linux MATLAB
+mex -compatibleArrayDims -I. CalinsNetMex.cpp Socket.cpp NetClient.cpp -outdir ..\API
+

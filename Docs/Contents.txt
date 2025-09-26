@@ -9,16 +9,18 @@ API folder
 API contains a complete prebuilt set of API components:
 
     + @SpikeGL             // place in client MATLAB project directory
-    + CalinsNetMex.mexw64  // place in client MATLAB project directory
+    + CalinsNetMex.mexa64  // place in client MATLAB project directory (Linux)
+    + CalinsNetMex.mexw64  // place in client MATLAB project directory (Windows)
 
 Build folder
 ============
 
 Note: Building is optional: the API components are prebuilt.
 
-Build contains the sources and make(*.bat) file to generate CalinsNetMex.mexw64:
+Build dir contains the sources and script to generate CalinsNetMex into API dir:
 
-    + CalinsNetMex.mexw64  // generated in API directory
+    + Linux:   copy text within linuxmakemexa64.txt to MATLAB command line
+    + Windows: edit and run makemexw64.bat
 
 Demos folder
 ============

@@ -3,8 +3,8 @@ SpikeGLX-MATLAB-SDK
 
 ### What
 
-The SDK lets MATLAB applications communicate with SpikeGLX phase30 versions
-20220101 and later:
+The SDK lets MATLAB (Windows and Linux) applications communicate with
+SpikeGLX versions 20220101 and later:
 
 * Set/get parameters.
 * Start/Stop runs.
@@ -25,13 +25,22 @@ The SDK is developed by [Bill Karsh](https://www.janelia.org/people/bill-karsh)
 of the [Tim Harris Lab](https://www.janelia.org/lab/harris-lab-apig) at
 HHMI/Janelia Research Campus.
 
+### Precompiled Components
+
+Everything you need is included in the package and precompiled. You would
+only need to compile yourself if you need to use a very old MATLAB version.
+
+### Building in Linux
+
+I build using Linux MATLAB R2021b.
+
 ### Building in Windows
 
 I build using MS Visual Studio C++ 2015, and MATLAB R2018b.
 
 ### Licensing
 
-Use is subject to Janelia Research Campus Software Copyright 1.2 license terms:
+Use is subject to Janelia Research Campus Software license terms:
 [http://license.janelia.org/license](http://license.janelia.org/license).
 
 

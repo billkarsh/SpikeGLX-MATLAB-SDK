@@ -14,7 +14,7 @@ SpikeGLX Setup
 
 4. Write down the IP address; you'll need to type that into the MATLAB client code.
 
-Note: You can run SpikeGLX and MATLAB on the same machine, and in this configuration you can either use the computer's actual network address (per step 3), or the 'loopback' address if you don't have a network connection on this computer. Every computer has an internal 'loopback' address set to '127.0.0.1'. Use that with default port number 4142.
+Note: For Windows, you can run SpikeGLX and MATLAB on the same machine, and in this configuration you can either use the computer's actual network address (per step 3), or the 'loopback' address if you don't have a network connection on this computer. Every computer has an internal 'loopback' address set to '127.0.0.1'. Use that with default port number 4142.
 
 Note: If the script times out (about 10 seconds) when trying to connect to SpikeGLX, it may be Windows Firewall blocking access. You might try adding SpikeGLX to the allowed list of applications in the Firewall controls.
 
@@ -26,7 +26,7 @@ Needed components are located within Release subfolder 'SpikeGLX-MATLAB-SDK/API'
 
 1. Create a folder for your MATLAB client project, such as 'My_SGLX_MATLAB'.
 
-2. Copy '@SpikeGL' and 'CalinsNetMex.mexw64' from API into 'My_SGLX_MATLAB'.
+2. Copy '@SpikeGL' and (Linux->'CalinsNetMex.mexa64' or Windows->'CalinsNetMex.mexw64') from API into 'My_SGLX_MATLAB'.
 
 3. To get started with example code, copy 'DemoRemoteAPI.m' into 'My_SGLX_MATLAB'.
 
@@ -50,6 +50,22 @@ Running MATLAB
 4. Go to the section called 'Variety of set/get calls to try' and choose a trial test function by uncommenting it. For example, try 'file = GetDataDir(hSGL)' which will return the data directory whether SpikeGLX is running an acquisition or is currently idle.
 
 5. Experiment with other commands (only a few are demonstrated in this m file).
+
+
+IMPORTANT
+=========
+
+SpikeGLX needs sufficient CPU resources to keep up with realtime acquisition. This is especially true if running many probes or high-channel count probes.
+
+MATLAB Startup
+--------------
+MATLAB is very resource hungry at startup. If SpikeGLX is already acquiring data, then starting up MATLAB on the same machine can starve SpikeGLX and cause the run to stop. To prevent that, we recommend launching MATLAB before starting a run with SpikeGLX on the same machine.
+
+MATLAB CPU Usage
+----------------
+By default, MATLAB will try to use all the CPU resources on a machine to boost its performance. That may be too much, say, if you are doing closed-loop SpikeGLX data fetching on the same machine.
+
+Control MATLAB's CPU usage with maxNumCompThreads(). This poorly named MATLAB function takes the maximum number of `cores` (not threads) you will allow MATLAB to use while running your script. Try setting the input parameter to myCores/2 to balance resources between MATLAB and SpikeGLX.
 
 
 Next
