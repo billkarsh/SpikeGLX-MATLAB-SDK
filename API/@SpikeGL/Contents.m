@@ -134,6 +134,11 @@
 %
 %     Returns the AP and LF gains for given probe and channel.
 %
+% [g,t] = GetLastGT( myobj )
+%
+%     Returns most recently used {g,t} indices.
+%     Returns {-1,-1} if no files written yet.
+%
 % params = GetParams( myobj )
 %
 %     Get the most recently used run parameters.
