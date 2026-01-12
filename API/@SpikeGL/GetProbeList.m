@@ -1,7 +1,6 @@
 % list = GetProbeList( myobj )
 %
-%     Get string with format:
-%     (probeID,nShanks,partNumber)()...
+%     Get string with format: (probeID,nShanks,partNumber)...
 %     - A parenthesized entry for each selected probe.
 %     - probeID: zero-based integer.
 %     - nShanks: integer {1,4}.

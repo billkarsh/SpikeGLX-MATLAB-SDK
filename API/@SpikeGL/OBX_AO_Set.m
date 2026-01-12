@@ -1,7 +1,7 @@
 % myobj = OBX_AO_Set( myobj, ip, slot, 'chn_vlt' )
 %
 %     Set one or more OneBox AO (DAC) channel voltages.
-%     - chn_vlt is a string with format: (chan,volts)(chan,volts)...()
+%     - chn_vlt is a string with format: (chan,volts)...(chan,volts)
 %     - The chan values are integer AO indices in range [0,11].
 %     - You can only use AO channels already listed on the OBX setup tab.
 %     - Voltages are double values in range [-5.0,5.0] V.

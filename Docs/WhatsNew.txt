@@ -3,6 +3,8 @@ AS OF 20251218
 ==============
 
 - Permit js=-2 for any stream operation.
+- More efficient StartRun (MATLAB).
+- Add GetProbeAddrs.
 
 ==============
 AS OF 20250930
