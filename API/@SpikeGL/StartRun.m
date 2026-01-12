@@ -10,36 +10,22 @@
 %
 function [s] = StartRun( varargin )
 
-    s      = varargin{1};
-    rname  = [];
-    params = [];
-
-    if( nargin > 1 )
-
-        arg2 = varargin{2};
-
-        if( ischar( arg2 ) )
-            rname = arg2;
-        elseif( isstruct( arg2 ) )
-            params = arg2;
-        else
-            error( 'StartRun: Invalid second argument; must be a string or struct.' );
-        end
-    end
+    s = varargin{1};
 
     if( IsRunning( s ) )
         error( 'StartRun: Already running.' );
     end
 
-    if( isempty( params ) )
-        params = GetParams( s );
-    end
+    if( nargin > 1 )
 
-    if( ~isempty( rname ) )
-        params.snsRunName = rname;
+        if( isstruct( varargin{2} ) )
+            SetParams( s, varargin{2} );
+        elseif( ischar( varargin{2} ) )
+            SetRunName( s, varargin{2} );
+        else
+            error( 'StartRun: Invalid second argument; must be a string or struct.' );
+        end
     end
-
-    SetParams( s, params );
 
     DoSimpleCmd( s, 'STARTRUN' );
 end
