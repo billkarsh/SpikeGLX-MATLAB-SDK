@@ -148,6 +148,14 @@
 %     Returns most recently used {g,t} indices.
 %     Returns {-1,-1} if no files written yet.
 %
+% list = GetOneBoxAdrrs( myobj )
+%
+%     Get string with format: (OneBoxID,slot)...
+%     - A parenthesized entry for each selected obx.
+%     - OneBoxID: zero-based integer assigned by 'Detect'.
+%     - slot: which OneBox by user-assigned slot.
+%     - If no OneBoxes, return '()'.
+%
 % params = GetParams( myobj )
 %
 %     Get the most recently used run parameters.
@@ -467,6 +475,31 @@
 %
 %     Pause Graphs window displays.
 %     Note: The displays are updated at ~10 Hz.
+%
+% myobj = SelectDevices( myobj, 'devstring', errlvl )
+%
+%     This command:
+%     1. Opens the Configure Acquisition dialog.
+%     2. Checks boxes according to the devstring parameter.
+%     3. Clicks 'Detect', and if successful...
+%     4. Clicks 'Verify | Save'.
+%
+%     - devstring enables Devices tab items:
+%        Format:        (device)...(device)
+%        Passive probe: (slot,port,PN,SN) e.g. (2,1,NP1200,12709120122)
+%        Regular probe: (slot,port,dock)  e.g. (2,1,1)
+%        OneBox XIO:    (slot,obx)        e.g. (21,obx)
+%        NI-DAQ:        (nidq)            e.g. (nidq)
+%     - errlvl:
+%        1 = report severe errors
+%        2 = report errors and warnings (including broken shanks)
+%
+%     Note:
+%        Here probes and OneBoxes are selected by physical address
+%        (slot,port,dock). However, parameters are set according to
+%        logical address (js,ip). After this call, use GetProbeAddrs
+%        and GetOneBoxAddrs to get the mappings between logical and
+%        physical addresses that 'Detect' assigns.
 %
 % myobj = SetAnatomy_Pinpoint( myobj, 'shankdat' )
 %
